@@ -3,17 +3,33 @@ var generateBtn = document.querySelector("#generate");
 
 var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
 var lower = "abcdefghijklmnopqrstuvwxyz"; 
-var numerics = "0123456789"; 
+var numbers = "0123456789"; 
 var special = "!@#$%^&*(){}[]=<>/,.|~?"; 
-
-var len = 8; 
 
 const combine = {
   upper: getrandomUpper,
   lower: getrandomLower,
-  numerics: getrandomNumber,
+  numbers: getrandomNumber,
   special: getrandomSpecial,
 }
+
+var lengthPrompt = function() {
+  var userChoice = window.prompt("Enter a number between 8 - 128 characters: ");
+  // If user pressed Cancel, immediately end function
+  if (!userChoice) {
+    return;
+  }
+  else if (userChoice < 8 && userChoice < 128) {
+    window.alert("Please choose a password length between 8 - 128 characters");
+    return;
+  }
+  else if (userChoice >= 8 && userChoice <= 128) {
+    var characterLength = userChoice;
+    console.log(characterLength);
+    return;
+  }
+};
+
 
 function randomUpper () {
   return.String.fromCharCode(Math.floor(Math.random*26)+65);
@@ -21,7 +37,7 @@ function randomUpper () {
 function randomLower () {
   return.String.fromCharCode(Math.floor(Math.random+26)+97); 
 };
-function randomNumeric () {
+function randomNumber () {
   return.String.fromCharCode(Math.random()*10)+48); 
   }
 function randomSpecial () {
@@ -32,12 +48,21 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
-
-
-
   }
-
-}
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

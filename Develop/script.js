@@ -6,12 +6,12 @@ var lower = "abcdefghijklmnopqrstuvwxyz";
 var numbers = "0123456789"; 
 var special = "!@#$%^&*(){}[]=<>/,.|~?"; 
 
-const combine = {
+/*const combine = {
   upper: getrandomUpper,
   lower: getrandomLower,
   numbers: getrandomNumber,
   special: getrandomSpecial,
-}
+} */
 
 // Write password to the #password input
 function writePassword() {
@@ -35,19 +35,55 @@ var lengthPrompt = function() {
   }
   else if (userChoice >= 8 && userChoice <= 128) {
     var characterLength = userChoice;
-    console.log(characterLength);
     return;
   }
 };
 
+var lowerCasePrompt = function() {
+  var answerLC = window.prompt("Lowercase letters? (Y/N)");
+  if (!answerLC) {
+    window.alert("Please choose yes or no");
+    lowerCasePrompt();
+  }
+  else if (answerLC === "Y" || answerLC === "y"){
+    return;
+  }
+  else {
+  return;
+  }
+};
+var upperCasePrompt = function() {
+  var answerUpperCase = window.prompt("Uppercase letters? (Y/N)");
+  if (!answerUpperCase) {
+    window.alert("Please choose yes or no");
+    console.log("they did not make a choice");
+    upperCasePrompt();
+  }
+  else if (answerUpperCase === "Y") {
+    //there needs to be a function that runs there to join the array
+    console.log("the user picked uppercase password");
+    return;
+  }
+  else {
+  console.log("The user did not pick uppercase password");
+  return;
+  }
+};
+
 var generatePassword = function () {
+  //run the length prompt function
   lengthPrompt();
-  
+//run the lowercase function
+  lowerCasePrompt();
+//run the uppercase prompt
+  upperCasePrompt();
+//run the number prompt
+  numberPrompt();
+//run the special characters prompt
+  specialPrompt();
+// need another function to join the arrays below this 
 
-}
-
-
-function randomUpper () {
+/*function randomUpper () {
   return.String.fromCharCode(Math.floor(Math.random*26)+65);
 }; 
 function randomLower () {
@@ -58,7 +94,7 @@ function randomNumber () {
   }
 function randomSpecial () {
   return symbol[Math.floor(Math.random()*symbol.length)]; 
-
+*/ 
 
 
 

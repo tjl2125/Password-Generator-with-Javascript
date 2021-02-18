@@ -13,14 +13,24 @@ const combine = {
   special: getrandomSpecial,
 }
 
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
+  }
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+
 var lengthPrompt = function() {
-  var userChoice = window.prompt("Enter a number between 8 - 128 characters: ");
+  var userChoice = window.prompt("Please type a number between 8 - 128 characters: ");
   // If user pressed Cancel, immediately end function
   if (!userChoice) {
     return;
   }
   else if (userChoice < 8 && userChoice < 128) {
-    window.alert("Please choose a password length between 8 - 128 characters");
+    window.alert("Please retype a new password length that is between 8 - 128 characters");
     return;
   }
   else if (userChoice >= 8 && userChoice <= 128) {
@@ -29,6 +39,12 @@ var lengthPrompt = function() {
     return;
   }
 };
+
+var generatePassword = function () {
+  lengthPrompt();
+  
+
+}
 
 
 function randomUpper () {
@@ -43,14 +59,6 @@ function randomNumber () {
 function randomSpecial () {
   return symbol[Math.floor(Math.random()*symbol.length)]; 
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-  passwordText.value = password;
-  }
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
 
 
 

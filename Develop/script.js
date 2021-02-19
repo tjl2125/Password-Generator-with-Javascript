@@ -52,6 +52,7 @@ var lowerCasePrompt = function() {
   return;
   }
 };
+
 var upperCasePrompt = function() {
   var answerUpperCase = window.prompt("Uppercase letters? (Y/N)");
   if (!answerUpperCase) {
@@ -66,6 +67,42 @@ var upperCasePrompt = function() {
   }
   else {
   console.log("The user did not pick uppercase password");
+  return;
+  }
+};
+
+var numberPrompt = function() {
+  var answerNumber = window.prompt("Numbers? (Y/N)");
+  if (!answerNumber) {
+    window.alert("Please choose yes or no");
+    console.log("they did not make a choice");
+    numberPrompt();
+  }
+  else if (answerNumber === "Y") {
+    //there needs to be a function that runs there to join the array
+    console.log("the user picked numbers in their password");
+    return;
+  }
+  else{
+  console.log("The user did not pick numbers in their password");
+  return;
+  }
+};
+
+var specialPrompt = function() {
+  var answerSpecial = window.prompt("Special Characters? (Y/N)");
+  if (!answerSpecial) {
+    window.alert("Please choose yes or no");
+    console.log("they did not make a choice");
+    specialPrompt();
+  }
+  else if (answerSpecial === "Y") {
+    //there needs to be a function that runs there to join the array
+    console.log("the user picked Special Characters in their password");
+    return;
+  }
+  else{
+  console.log("The user did not pick Special Characters in their password");
   return;
   }
 };

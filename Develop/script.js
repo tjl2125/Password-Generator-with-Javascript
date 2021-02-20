@@ -1,8 +1,8 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
-var lower = "abcdefghijklmnopqrstuvwxyz"; 
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+var lowerCase = "abcdefghijklmnopqrstuvwxyz"; 
 var numbers = "0123456789"; 
 var special = "!@#$%^&*(){}[]=<>/,.|~?"; 
 
@@ -34,3 +34,12 @@ var generatePassword = function(){
   else if (pLength >= 8 || pLength <= 128) {
     console.log(pLength);
   }
+
+  var lowerCasePrompt = confirm("Would you like to include lowercase letters in your password?");
+  console.log(lowerCase);
+  var upperCasePrompt = confirm("Would you like to include uppercase letters in your password?");
+  console.log(upperCase);
+  var numbersPrompt = confirm("Would you like to include numbers in your password?");
+  console.log(numbers);
+  var specialPrompt = confirm("Would you like to include special characters in your password?");
+  console.log(special); 

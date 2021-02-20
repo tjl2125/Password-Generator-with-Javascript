@@ -43,3 +43,7 @@ var generatePassword = function(){
   console.log(numbers);
   var specialPrompt = confirm("Would you like to include special characters in your password?");
   console.log(special); 
+
+  if (lowerCasePrompt === false && upperCasePrompt === false && numbersPrompt === false && specialPrompt ===false) {
+    window.alert ("Go back and choose one of the four options.");
+    return; 

@@ -47,3 +47,25 @@ var generatePassword = function(){
   if (lowerCasePrompt === false && upperCasePrompt === false && numbersPrompt === false && specialPrompt ===false) {
     window.alert ("Go back and choose one of the four options.");
     return; 
+  } 
+  else {
+      var combine = "";
+      if (lowerCasePrompt) {
+          combine = lowerCase; 
+      }
+      if (upperCasePrompt) {
+          combine = combine + upperCase;
+      }
+      if (numbersPrompt) {
+          combine = combine + numbers;
+      }
+      if (specialPrompt) {
+          combine = combine + special;
+      }
+      for (var i = 0; i < pLength; i++) {
+          password += combine [Math.floor(Math.random() * combine.length)];
+      }
+  }
+
+return password;
+};

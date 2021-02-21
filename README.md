@@ -4,6 +4,11 @@
 From the perspective of an employee who has access to sensitive data, I am trying to generate 
 a strong password so that I have greater security. In order to accomplish this, I am
 using a password generator that uses Javascript which also requires certain criteria. 
+The password generator prompts the user to choose how many characters they want in their 
+password, though they must choose between 8 - 128 characters. The user is also
+prompted to choose uppercase letters, lowercase letters, numbers, and/or special
+characters. They will receive a warning alert message if they do not choose at 
+least one of the criteria. 
 
 ## Screenshot 
 
